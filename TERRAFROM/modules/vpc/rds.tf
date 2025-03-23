@@ -14,7 +14,7 @@ resource "aws_db_instance" "rds-instance" {
   username             = "admin"
   password             = "password"
   db_subnet_group_name = aws_db_subnet_group.rds-subnet-group.name
-  vpc_security_group_ids = [aws_security_group.rds-subnet-group]
+  vpc_security_group_ids = [aws_security_group.rds_sg.id]
   skip_final_snapshot  = true
   tags = {
     Name ="rds-instance"
